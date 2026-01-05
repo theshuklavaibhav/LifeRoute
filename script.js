@@ -12,39 +12,50 @@ btn.addEventListener("click", () => {
 
     navigator.geolocation.getCurrentPosition(
         (position) => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
 
-            sendEmergency(lat, lon);
+            sendEmergency(latitude, longitude);
         },
         () => {
-            alert("Please enable GPS to request ambulance.");
+            alert("Please enable GPS/location to request an ambulance.");
             reset();
         }
     );
 });
 
-function sendEmergency(lat, lon) {
+function sendEmergency(latitude, longitude) {
     fetch("https://liferoute-api-gdhwdhcdffhcenbh.centralindia-01.azurewebsites.net/api/emergency", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            latitude: lat,
-            longitude: lon
+            latitude: latitude,
+            longitude: longitude
         })
     })
     .then(response => response.json())
     .then(data => {
+        const dispatchNumber = "918586847909"; // ✅ your WhatsApp number (demo dispatch)
+
+        const whatsappUrl =
+            `https://wa.me/${dispatchNumber}?text=` +
+            encodeURIComponent(data.whatsappMessage);
+
+        // Open WhatsApp with pre-filled message
+        window.open(whatsappUrl, "_blank");
+
+        // User confirmation
         alert(
             data.message +
-            "\nStatus: " + data.status
+            "\nStatus: Ambulance dispatch initiated"
         );
+
         reset();
     })
     .catch(() => {
-        alert("Emergency service temporarily unavailable.");
+        alert("Emergency service temporarily unavailable. Please try again.");
         reset();
     });
 }
