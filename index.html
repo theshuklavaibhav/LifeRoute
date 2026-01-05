@@ -14,92 +14,159 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+        <!-- NAVBAR -->
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <div class="logo-box">LOGO</div>
+      <span>LifeRoute</span>
+    </div>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                🚑 <span>LifeRoute</span>
-            </div>
-            <nav class="nav">
-                <a href="#">Home</a>
-                <a href="#">How It Works</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <nav>
+      <a href="#how">How It Works</a>
+      <a href="#cases">Use Cases</a>
+      <a href="#trust">Trust</a>
+      <a href="#contact" class="cta-link">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Emergency Ambulance Access,<br><span>When Every Second Matters</span></h1>
+            <!-- HERO -->
+            <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                <h1>
+                    Emergency Ambulance Access<br/>
+                    <span>When Every Second Matters</span>
+                </h1>
 
-            <p>
-                LifeRoute instantly connects patients to nearby verified ambulances
-                with transparent pricing and real-time location sharing.
-            </p>
-
-            <button class="emergency-btn" id="emergencyBtn">
-                🚨 REQUEST AMBULANCE
-            </button>
-
-            <p class="hero-note">
-                One tap • GPS enabled • Inclusive for all
-            </p>
-        </div>
-    </section>
-
-    <!-- ================= FEATURES ================= -->
-    <section class="features">
-        <h2>Why LifeRoute?</h2>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>⚡ Instant Connection</h3>
                 <p>
-                    Connects you to the nearest available ambulance
-                    without calls or delays.
+                    LifeRoute enables instant ambulance coordination through
+                    secure GPS sharing and verified dispatch workflows —
+                    designed for real-world emergencies.
+                </p>
+
+                <button id="emergencyBtn" class="primary-btn">
+                    Request Ambulance
+                </button>
+
+                <div class="trust-strip">
+                    <span>Hospitals</span>
+                    <span>Ambulance Operators</span>
+                    <span>Emergency Services</span>
+                </div>
+                </div>
+
+                <div class="hero-visual">
+                <div class="visual-card">
+                    <p>Live Location → Secure Dispatch</p>
+                    <small>Human-verified emergency flow</small>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- HOW -->
+            <section id="how" class="section">
+            <div class="container">
+                <h2>How LifeRoute Works</h2>
+
+                <div class="steps">
+                <div class="step">
+                    <h3>One-Tap Request</h3>
+                    <p>No calls, no searching. A single action initiates emergency support.</p>
+                </div>
+                <div class="step">
+                    <h3>Automatic GPS Sharing</h3>
+                    <p>Live location is captured securely to reduce response delays.</p>
+                </div>
+                <div class="step">
+                    <h3>Verified Dispatch</h3>
+                    <p>Details are routed through a controlled dispatch workflow.</p>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- CASES -->
+            <section id="cases" class="section soft">
+            <div class="container">
+                <h2>Where LifeRoute Makes an Impact</h2>
+
+                <div class="cases">
+                <div class="case">
+                    <h4>Elderly Medical Emergency</h4>
+                    <p>
+                    Enables seniors living alone to request immediate help
+                    without navigating complex apps or calls.
+                    </p>
+                </div>
+
+                <div class="case">
+                    <h4>Road Accidents</h4>
+                    <p>
+                    Bystanders can coordinate ambulance support instantly,
+                    even in unfamiliar locations.
+                    </p>
+                </div>
+
+                <div class="case">
+                    <h4>Rural & Semi-Urban Areas</h4>
+                    <p>
+                    Reduces emergency response time where infrastructure is limited.
+                    </p>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- TRUST -->
+            <section id="trust" class="section">
+            <div class="container">
+                <h2>Trusted Emergency Design Principles</h2>
+
+                <div class="testimonials">
+                <blockquote>
+                    “Clear GPS-based requests significantly reduce confusion
+                    during ambulance dispatch.”
+                    <span>— Emergency Dispatch Operator</span>
+                </blockquote>
+
+                <blockquote>
+                    “A single-tap flow is critical for elderly and low-literacy users.”
+                    <span>— Community Health Volunteer</span>
+                </blockquote>
+                </div>
+            </div>
+            </section>
+
+            <!-- RESPONSIBILITY -->
+            <section class="notice">
+            <div class="container">
+                <p>
+                LifeRoute is currently in a demonstration phase.
+                It is designed to support emergency response workflows
+                alongside verified emergency services and responsible use.
                 </p>
             </div>
+            </section>
 
-            <div class="feature-card">
-                <h3>📍 Live Location</h3>
-                <p>
-                    Automatically shares GPS coordinates with ambulance
-                    drivers for faster response.
-                </p>
+            <!-- CONTACT -->
+            <section id="contact" class="section soft center">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Email: support@liferoute.demo</p>
+                <p>Demo Dispatch via WhatsApp</p>
             </div>
+            </section>
 
-            <div class="feature-card">
-                <h3>💰 Fair Pricing</h3>
-                <p>
-                    Transparent and standardized charges to prevent
-                    overpricing during emergencies.
-                </p>
+            <footer class="footer">
+            <div class="container">
+                © 2026 LifeRoute • Emergency Healthcare Technology<br/>
+                Built for safety, speed, and dignity
             </div>
+            </footer>
 
-            <div class="feature-card">
-                <h3>🌍 Inclusive Design</h3>
-                <p>
-                    Built for elderly users, low-literacy users,
-                    and high-stress emergency situations.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <p>
-            © 2026 LifeRoute • Emergency Healthcare Technology
-        </p>
-        <p class="footer-sub">
-            Built for safety, speed, and dignity
-        </p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+            <script src="script.js"></script>
 </body>
 </html>
