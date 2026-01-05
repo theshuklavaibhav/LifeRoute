@@ -5,33 +5,49 @@ btn.addEventListener("click", () => {
     btn.disabled = true;
 
     if (!navigator.geolocation) {
-        alert("Location not supported on this device.");
+        alert("Geolocation not supported on this device.");
         reset();
         return;
     }
 
     navigator.geolocation.getCurrentPosition(
-        (pos) => {
-            const lat = pos.coords.latitude;
-            const lon = pos.coords.longitude;
+        (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
 
-            const message =
-                "🚨 EMERGENCY REQUEST\n\n" +
-                "LifeRoute Alert\n" +
-                "Location:\n" +
-                "Latitude: " + lat + "\n" +
-                "Longitude: " + lon;
-
-            alert(message);
-
-            reset();
+            sendEmergency(lat, lon);
         },
         () => {
-            alert("Please enable GPS to continue.");
+            alert("Please enable GPS to request ambulance.");
             reset();
         }
     );
 });
+
+function sendEmergency(lat, lon) {
+    fetch("https://liferoute-api-gdhwdhcdffhcenbh.centralindia-01.azurewebsites.net/api/emergency", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            latitude: lat,
+            longitude: lon
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(
+            data.message +
+            "\nStatus: " + data.status
+        );
+        reset();
+    })
+    .catch(() => {
+        alert("Emergency service temporarily unavailable.");
+        reset();
+    });
+}
 
 function reset() {
     btn.innerText = "🚨 REQUEST AMBULANCE";
