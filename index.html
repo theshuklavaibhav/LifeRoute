@@ -14,159 +14,160 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- NAVBAR -->
-<header class="nav">
-  <div class="container nav-inner">
-    <div class="brand">
-      <div class="logo-box">LOGO</div>
-      <span>LifeRoute</span>
-    </div>
+     <!-- NAVBAR -->
+        <header class="nav">
+        <div class="container nav-inner">
+        <div class="brand">
+            <img src="/assets/images/logo.svg" alt="LifeRoute Logo" class="logo-img"/>
+            <span>LifeRoute</span>
+        </div>
 
-    <nav>
-      <a href="#how">How It Works</a>
-      <a href="#cases">Use Cases</a>
-      <a href="#trust">Trust</a>
-      <a href="#contact" class="cta-link">Contact</a>
-    </nav>
-  </div>
-</header>
+        <nav>
+            <a href="#how">How It Works</a>
+            <a href="#cases">Use Cases</a>
+            <a href="#trust">Trust</a>
+            <a href="#contact" class="cta-link">Contact</a>
+        </nav>
+        </div>
+        </header>
 
-            <!-- HERO -->
-            <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                <h1>
-                    Emergency Ambulance Access<br/>
-                    <span>When Every Second Matters</span>
-                </h1>
+        <!-- HERO -->
+        <section class="hero">
+        <div class="container hero-grid fade-in">
+        <div class="hero-text">
+            <h1>
+            Emergency Ambulance Access<br/>
+            <span>When Every Second Matters</span>
+            </h1>
 
-                <p>
-                    LifeRoute enables instant ambulance coordination through
-                    secure GPS sharing and verified dispatch workflows —
-                    designed for real-world emergencies.
-                </p>
+            <p>
+            LifeRoute enables instant ambulance coordination using
+            secure GPS sharing and verified dispatch workflows —
+            designed for real-world emergencies.
+            </p>
 
-                <button id="emergencyBtn" class="primary-btn">
-                    Request Ambulance
-                </button>
+            <button id="emergencyBtn" class="primary-btn" aria-label="Request emergency ambulance">
+            Request Ambulance
+            </button>
 
-                <div class="trust-strip">
-                    <span>Hospitals</span>
-                    <span>Ambulance Operators</span>
-                    <span>Emergency Services</span>
-                </div>
-                </div>
-
-                <div class="hero-visual">
-                <div class="visual-card">
-                    <p>Live Location → Secure Dispatch</p>
-                    <small>Human-verified emergency flow</small>
-                </div>
-                </div>
+            <div class="trust-strip">
+            <span>Hospitals</span>
+            <span>Ambulance Operators</span>
+            <span>Emergency Services</span>
             </div>
-            </section>
+        </div>
 
-            <!-- HOW -->
-            <section id="how" class="section">
-            <div class="container">
-                <h2>How LifeRoute Works</h2>
+        <div class="hero-visual">
+            <img src="/assets/images/hero-illustration.png"
+                alt="Emergency dispatch illustration"
+                class="hero-image"/>
+        </div>
+        </div>
+        </section>
 
-                <div class="steps">
-                <div class="step">
-                    <h3>One-Tap Request</h3>
-                    <p>No calls, no searching. A single action initiates emergency support.</p>
-                </div>
-                <div class="step">
-                    <h3>Automatic GPS Sharing</h3>
-                    <p>Live location is captured securely to reduce response delays.</p>
-                </div>
-                <div class="step">
-                    <h3>Verified Dispatch</h3>
-                    <p>Details are routed through a controlled dispatch workflow.</p>
-                </div>
-                </div>
+        <!-- HOW IT WORKS -->
+        <section id="how" class="section fade-in">
+        <div class="container">
+        <h2>How LifeRoute Works</h2>
+
+        <div class="steps">
+            <div class="step hover-lift">
+            <img src="/assets/images/ambulance.svg" class="icon" alt="Ambulance"/>
+            <h3>One-Tap Request</h3>
+            <p>No calls or searching required. Emergency support starts instantly.</p>
             </div>
-            </section>
 
-            <!-- CASES -->
-            <section id="cases" class="section soft">
-            <div class="container">
-                <h2>Where LifeRoute Makes an Impact</h2>
-
-                <div class="cases">
-                <div class="case">
-                    <h4>Elderly Medical Emergency</h4>
-                    <p>
-                    Enables seniors living alone to request immediate help
-                    without navigating complex apps or calls.
-                    </p>
-                </div>
-
-                <div class="case">
-                    <h4>Road Accidents</h4>
-                    <p>
-                    Bystanders can coordinate ambulance support instantly,
-                    even in unfamiliar locations.
-                    </p>
-                </div>
-
-                <div class="case">
-                    <h4>Rural & Semi-Urban Areas</h4>
-                    <p>
-                    Reduces emergency response time where infrastructure is limited.
-                    </p>
-                </div>
-                </div>
+            <div class="step hover-lift">
+            <img src="/assets/images/gps.svg" class="icon" alt="GPS"/>
+            <h3>Automatic GPS Sharing</h3>
+            <p>Live location captured securely to reduce response delays.</p>
             </div>
-            </section>
 
-            <!-- TRUST -->
-            <section id="trust" class="section">
-            <div class="container">
-                <h2>Trusted Emergency Design Principles</h2>
-
-                <div class="testimonials">
-                <blockquote>
-                    “Clear GPS-based requests significantly reduce confusion
-                    during ambulance dispatch.”
-                    <span>— Emergency Dispatch Operator</span>
-                </blockquote>
-
-                <blockquote>
-                    “A single-tap flow is critical for elderly and low-literacy users.”
-                    <span>— Community Health Volunteer</span>
-                </blockquote>
-                </div>
+            <div class="step hover-lift">
+            <img src="/assets/images/dispatch.svg" class="icon" alt="Dispatch"/>
+            <h3>Verified Dispatch</h3>
+            <p>Details routed through a controlled dispatch workflow.</p>
             </div>
-            </section>
+        </div>
+        </div>
+        </section>
 
-            <!-- RESPONSIBILITY -->
-            <section class="notice">
-            <div class="container">
-                <p>
-                LifeRoute is currently in a demonstration phase.
-                It is designed to support emergency response workflows
-                alongside verified emergency services and responsible use.
-                </p>
+        <!-- USE CASES -->
+        <section id="cases" class="section soft fade-in">
+        <div class="container">
+        <h2>Where LifeRoute Makes an Impact</h2>
+
+        <div class="cases">
+            <div class="case hover-lift">
+            <img src="/assets/images/elderly.png" class="case-img" alt="Elderly healthcare"/>
+            <h4>Elderly Medical Emergency</h4>
+            <p>Immediate ambulance coordination for seniors living alone.</p>
             </div>
-            </section>
 
-            <!-- CONTACT -->
-            <section id="contact" class="section soft center">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>Email: support@liferoute.demo</p>
-                <p>Demo Dispatch via WhatsApp</p>
+            <div class="case hover-lift">
+            <img src="/assets/images/road-accident.jpg" class="case-img" alt="Road accident ambulance"/>
+            <h4>Road Accidents</h4>
+            <p>Bystanders can coordinate emergency help instantly.</p>
             </div>
-            </section>
 
-            <footer class="footer">
-            <div class="container">
-                © 2026 LifeRoute • Emergency Healthcare Technology<br/>
-                Built for safety, speed, and dignity
+            <div class="case hover-lift">
+            <img src="/assets/images/hospital-exterior.jpg" class="case-img" alt="Hospital exterior"/>
+            <h4>Rural & Semi-Urban Areas</h4>
+            <p>Reduces response time where infrastructure is limited.</p>
             </div>
-            </footer>
+        </div>
+        </div>
+        </section>
 
-            <script src="script.js"></script>
+        <!-- TRUST -->
+        <section id="trust" class="section fade-in">
+        <div class="container">
+        <h2>Trusted Emergency Design Principles</h2>
+
+        <div class="testimonials">
+            <blockquote>
+            “Clear GPS-based requests significantly reduce confusion
+            during ambulance dispatch.”
+            <span>— Emergency Dispatch Operator</span>
+            </blockquote>
+
+            <blockquote>
+            “A single-tap flow is critical for elderly and
+            low-literacy users.”
+            <span>— Community Health Volunteer</span>
+            </blockquote>
+        </div>
+        </div>
+        </section>
+
+        <!-- RESPONSIBILITY -->
+        <section class="notice">
+        <div class="container">
+        <p>
+            LifeRoute is currently in a demonstration phase.
+            It is designed to support emergency response workflows
+            alongside verified emergency services and responsible use.
+        </p>
+        </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section soft center fade-in">
+        <div class="container">
+        <h2>Contact</h2>
+        <p>Email: support@liferoute.demo</p>
+        <p>Demo Dispatch via WhatsApp</p>
+        </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+        <div class="container">
+        © 2026 LifeRoute • Emergency Healthcare Technology<br/>
+        Built for safety, speed, and dignity
+        </div>
+        </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
