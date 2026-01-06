@@ -15,7 +15,8 @@ btn.addEventListener("click", () => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            sendEmergency(latitude, longitude);
+            // sendEmergency(latitude, longitude);
+            sendEmergencyV2(latitude, longitude);
         },
         () => {
             alert("Please enable GPS/location to request an ambulance.");
@@ -72,6 +73,58 @@ function sendEmergency(latitude, longitude) {
         reset();
     });
 }
+
+function sendEmergencyV2(latitude, longitude) {
+    // Disable button to prevent double clicks
+    btn.innerText = "Connecting to emergency dispatch...";
+    btn.disabled = true;
+
+    fetch("/api/createEmergencyRequest", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            lat: latitude,
+            lng: longitude,
+            type: "Medical"
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        // 1️⃣ Validate response
+        if (!data.dispatchLinks || data.dispatchLinks.length === 0) {
+            throw new Error("No dispatchers available");
+        }
+
+        // 2️⃣ Open WhatsApp dispatch links (first responder wins)
+        data.dispatchLinks.forEach(link => {
+            window.open(link, "_blank");
+        });
+
+        // 3️⃣ Inform user
+        alert(
+            "Emergency request sent.\n" +
+            "Waiting for a dispatcher to accept."
+        );
+
+        // 4️⃣ Optional: store requestId for later status tracking
+        window.currentEmergencyRequestId = data.requestId;
+
+        reset();
+
+    })
+    .catch(err => {
+        console.error(err);
+        alert(
+            "Unable to contact emergency dispatch.\n" +
+            "Please try again or call local emergency services."
+        );
+        reset();
+    });
+}
+
 
 function reset() {
     btn.innerText = "🚨 REQUEST AMBULANCE";
