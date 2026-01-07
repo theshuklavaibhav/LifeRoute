@@ -39,40 +39,40 @@ function sendEmergency(latitude, longitude) {
     // })
     
     //------MVP-v2 API Call -----------------------------------------|
-        fetch("/api/emergency", {   // ✅ FIXED (relative path)
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            latitude: latitude,
-            longitude: longitude
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        const dispatchNumber = "918586847909"; // ✅ your WhatsApp number (demo dispatch)
+//         fetch("/api/createEmergencyRequest", {   // ✅ FIXED (relative path)
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             latitude: latitude,
+//             longitude: longitude
+//         })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         const dispatchNumber = "918586847909"; // ✅ your WhatsApp number (demo dispatch)
 
-        const whatsappUrl =
-            `https://wa.me/${dispatchNumber}?text=` +
-            encodeURIComponent(data.whatsappMessage);
+//         const whatsappUrl =
+//             `https://wa.me/${dispatchNumber}?text=` +
+//             encodeURIComponent(data.whatsappMessage);
 
-        // Open WhatsApp with pre-filled message
-        window.open(whatsappUrl, "_blank");
+//         // Open WhatsApp with pre-filled message
+//         window.open(whatsappUrl, "_blank");
 
-        // User confirmation
-        alert(
-            data.message +
-            "\nStatus: Ambulance dispatch initiated"
-        );
+//         // User confirmation
+//         alert(
+//             data.message +
+//             "\nStatus: Ambulance dispatch initiated"
+//         );
 
-        reset();
-    })
-    .catch(() => {
-        alert("Emergency service temporarily unavailable. Please try again.");
-        reset();
-    });
-}
+//         reset();
+//     })
+//     .catch(() => {
+//         alert("Emergency service temporarily unavailable. Please try again.");
+//         reset();
+//     });
+// }
 
 function sendEmergencyV2(latitude, longitude) {
     // Disable button to prevent double clicks
