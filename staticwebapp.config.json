@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "route": "/api/emergency",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/api/createEmergencyRequest",
+      "allowedRoles": ["anonymous"],
+      "methods": ["POST"]
+    },
+    {
+      "route": "/api/register-dispatcher",
+      "allowedRoles": ["anonymous"],
+      "methods": ["POST"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}
