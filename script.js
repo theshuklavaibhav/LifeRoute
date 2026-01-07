@@ -79,7 +79,7 @@ function sendEmergencyV2(latitude, longitude) {
     btn.innerText = "Connecting to emergency dispatch...";
     btn.disabled = true;
 
-    fetch("/api/createEmergencyRequest", {
+    fetch("https://liferoute-api-gdhwdhcdffhcenbh.centralindia-01.azurewebsites.net/api/emergency", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
