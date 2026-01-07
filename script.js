@@ -25,20 +25,20 @@ btn.addEventListener("click", () => {
     );
 });
 
-function sendEmergency(latitude, longitude) {
-    // working API Call for MVP-v1
-    // fetch("https://liferoute-api-gdhwdhcdffhcenbh.centralindia-01.azurewebsites.net/api/emergency", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //         latitude: latitude,
-    //         longitude: longitude
-    //     })
-    // })
+// function sendEmergency(latitude, longitude) {
+//     // working API Call for MVP-v1
+//     // fetch("https://liferoute-api-gdhwdhcdffhcenbh.centralindia-01.azurewebsites.net/api/emergency", {
+//     //     method: "POST",
+//     //     headers: {
+//     //         "Content-Type": "application/json"
+//     //     },
+//     //     body: JSON.stringify({
+//     //         latitude: latitude,
+//     //         longitude: longitude
+//     //     })
+//     // })
     
-    //------MVP-v2 API Call -----------------------------------------|
+//     //------MVP-v2 API Call -----------------------------------------|
 //         fetch("/api/createEmergencyRequest", {   // ✅ FIXED (relative path)
 //         method: "POST",
 //         headers: {
